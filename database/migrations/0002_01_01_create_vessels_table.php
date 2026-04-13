@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->geography('current_location', 'point', 4326)->nullable();
             $table->decimal('speed', 5, 2)->nullable();
             $table->decimal('course', 5, 2)->nullable();
-            $table->foreignId('destination_port_id')->nullable()->constrained('ports');
+            $table->foreignId('destination_port_id')->nullable();
             $table->timestamp('eta')->nullable();
             $table->timestamps();
             $table->softDeletes();
