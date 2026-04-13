@@ -42,6 +42,12 @@ Run migrations (use a Postgres database with PostGIS support):
 php artisan migrate
 ```
 
+Seed sample maritime data:
+
+```bash
+php artisan db:seed
+```
+
 Start the app:
 
 ```bash
@@ -53,6 +59,11 @@ composer run dev
 ```bash
 php artisan test
 ```
+
+API feature tests now cover:
+
+- listing, creating, updating, and soft deleting Ports
+- listing, creating, updating, and soft deleting Vessels
 
 ## Notes
 
