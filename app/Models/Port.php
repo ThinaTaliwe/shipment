@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 #[ApiResource(
     order: ['name' => 'ASC'],
-    normalizationContext: ['groups' => ['port:read']],
-    denormalizationContext: ['groups' => ['port:write']],
 )]
 class Port extends Model
 {

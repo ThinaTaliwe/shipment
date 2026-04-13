@@ -10,8 +10,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 #[ApiResource(
     order: ['name' => 'ASC'],
     paginationItemsPerPage: 20,
-    normalizationContext: ['groups' => ['vessel:read']],
-    denormalizationContext: ['groups' => ['vessel:write']],
 )]
 class Vessel extends Model
 {
