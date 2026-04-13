@@ -2,6 +2,7 @@
 namespace App\Models;
 
 use ApiPlatform\Metadata\ApiResource;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -14,6 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 )]
 class Vessel extends Model
 {
+    use HasFactory;
     use SoftDeletes;
 
     protected $fillable = [
@@ -25,7 +27,8 @@ class Vessel extends Model
     protected $casts = [
         'eta' => 'datetime',
         'length' => 'decimal:2', 'beam' => 'decimal:2', 'draft' => 'decimal:2',
-        'gross_tonnage' => 'decimal:2', 'speed' => 'decimal:2', 'course' => 'decimal:2'
+        'gross_tonnage' => 'decimal:2', 'speed' => 'decimal:2', 'course' => 'decimal:2',
+        'current_location' => 'array',
     ];
 
     public function destinationPort(): BelongsTo
