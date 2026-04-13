@@ -25,19 +25,19 @@ class VesselApiTest extends TestCase
         $port = Port::factory()->create();
 
         $payload = [
-            'imoNumber' => '9221234',
+            'imo_number' => '9221234',
             'name' => 'Atlas Voyager',
-            'callSign' => 'AB123',
+            'call_sign' => 'AB123',
             'mmsi' => '123456789',
-            'vesselType' => 'Container',
+            'vessel_type' => 'Container',
             'flag' => 'US',
             'length' => 250.5,
             'beam' => 40.2,
             'draft' => 12.3,
-            'grossTonnage' => 98000.0,
+            'gross_tonnage' => 98000.0,
             'speed' => 14.5,
             'course' => 180.0,
-            'destinationPortId' => $port->id,
+            'destination_port_id' => $port->id,
             'eta' => now()->addDays(3)->toISOString(),
         ];
 

@@ -24,10 +24,10 @@ class PortApiTest extends TestCase
         $payload = [
             'unlocode' => 'USNYC',
             'name' => 'New York Harbor',
-            'countryCode' => 'US',
+            'country_code' => 'US',
             'timezone' => 'America/New_York',
             'website' => 'https://www.panynj.gov',
-            'contactEmail' => 'ops@example.com',
+            'contact_email' => 'ops@example.com',
         ];
 
         $response = $this->postJson('/api/ports', $payload);
