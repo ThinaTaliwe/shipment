@@ -19,6 +19,7 @@ Both entities are exposed as API Platform resources and support soft deletes.
 ## API behavior
 
 By default, API Platform exposes resources under `/api` and enables OpenAPI/Swagger/ReDoc/Scalar documentation UIs.
+Because `name_converter` is set to `SnakeCaseToCamelCaseNameConverter`, JSON payload field names are camelCase (for example: `imoNumber`, `countryCode`, `destinationPortId`).
 
 ## Development
 
@@ -42,10 +43,22 @@ Run migrations (use a Postgres database with PostGIS support):
 php artisan migrate
 ```
 
+Seed sample maritime data:
+
+```bash
+php artisan db:seed
+```
+
 Start the app:
 
 ```bash
 composer run dev
+```
+
+Open the lightweight UI dashboard:
+
+```text
+/dashboard
 ```
 
 ## Testing
@@ -53,6 +66,11 @@ composer run dev
 ```bash
 php artisan test
 ```
+
+API feature tests now cover:
+
+- listing, creating, updating, and soft deleting Ports
+- listing, creating, updating, and soft deleting Vessels
 
 ## Notes
 
